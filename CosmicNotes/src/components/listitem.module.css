@@ -1,0 +1,21 @@
+.listItem{
+    background-color: #1A2234;
+    color: #e2e8f0;
+    margin: 10px 35px;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    outline: auto;
+    outline-color: #2A3344;
+    outline-width: 1.25px;
+    outline-style: solid;
+    border-radius: 8px
+}
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.date{
+    margin-top: -5px;
+    color: #64748B;
+    font-size: 0.75em;
+}

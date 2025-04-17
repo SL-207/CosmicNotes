@@ -1,0 +1,13 @@
+.noteCategory {
+  margin-top: 10px;
+  color: #6a4fd1;
+  font-family: "Courier New", Courier, monospace;
+}
+.categoryButton {
+  color: #e2e8f0;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 1px solid #2a3344;
+}
