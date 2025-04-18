@@ -25,25 +25,22 @@ CORS(app)
 def calc_matches(note_content, prev_note_texts):
     match_idxs = []
     threshold = 40
-    # note_tokens = processor(
-    #     text=[note_content],
-    #     images=None,
-    #     # text_embeds=prev_note_texts,
-    #     return_tensors="pt",
-    # )
-    # note_embed = model.get_text_features(**note_tokens)
-    # note_embed = note_embed.detach().cpu().numpy()
-    # note_embed = note_embed / np.linalg.norm(note_embed, axis=0)
-
-    all_note_tokens = processor(
-        text=[note_content] + prev_note_texts, images=None, return_tensors="pt", padding=True
+    note_tokens = processor(
+        text=[note_content],
+        images=None,
+        # text_embeds=prev_note_texts,
+        return_tensors="pt",
     )
-    all_note_embeds = model.get_text_features(**all_note_tokens)
-    all_note_embeds = all_note_embeds.detach().cpu().numpy()
-    all_note_embeds = all_note_embeds / np.linalg.norm(all_note_embeds, axis=0)
-    note_embed = all_note_embeds[0]
-    prev_note_embeds = all_note_embeds[1:]
-    
+    note_embed = model.get_text_features(**note_tokens)
+    note_embed = note_embed.detach().cpu().numpy()
+    note_embed = note_embed / np.linalg.norm(note_embed, axis=0)
+
+    prev_note_tokens = processor(
+        text=prev_note_texts, images=None, return_tensors="pt", padding=True
+    )
+    prev_note_embeds = model.get_text_features(**prev_note_tokens)
+    prev_note_embeds = prev_note_embeds.detach().cpu().numpy()
+
     for idx, prev_note_embed in enumerate(prev_note_embeds):
         print(np.dot(note_embed, prev_note_embed))
         if np.dot(note_embed, prev_note_embed) >= threshold:
@@ -63,7 +60,8 @@ def changeNode():
         if key.startswith("object"):
             note_str = request.form.get(key)
             note_obj = json.loads(note_str)
-            prev_notes.append(note_obj)
+            if str(note_obj["id"]) != note_id:
+                prev_notes.append(note_obj)
 
     if prev_notes and note_content and note_id:
         prev_note_texts = [note["content"] for note in prev_notes]

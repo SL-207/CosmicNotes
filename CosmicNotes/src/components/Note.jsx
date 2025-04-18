@@ -35,7 +35,7 @@ export default function Note({
   const saveNote = async () => {
     let noteToSave;
     setPopup({ active: false });
-    if (popup.id === "NA") {
+    if (popup.id === 0) {
       noteToSave = {
         ...note,
         id: nextID,
