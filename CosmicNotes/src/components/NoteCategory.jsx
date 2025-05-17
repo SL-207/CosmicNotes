@@ -7,7 +7,11 @@ function NoteCategory({ categories, note, setNote }) {
       {categories.map((category) => (
         <button
           className={styles.categoryButton}
-          onClick={() => setNote({ ...note, category: category })}
+          onClick={() =>
+            !note.category || note.category !== category
+              ? setNote({ ...note, category: category })
+              : setNote({ ...note, category: null })
+          }
           style={
             note.category === category
               ? { backgroundColor: "#6A4FD1" }

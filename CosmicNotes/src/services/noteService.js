@@ -18,3 +18,36 @@ export async function computeNewEdges(noteToSave, noteList) {
     return [];
   }
 }
+
+export async function computeAllEdges(noteList, thold){
+  const formData = new FormData();
+  noteList.forEach((noteObj, idx) =>
+    formData.append(`object${idx}`, JSON.stringify(noteObj))
+  );
+  formData.append("thold", thold.toString());
+  try {
+    const response = await fetch(`${API_URL}/calcAllEdges`, {
+      method: "POST",
+      body: formData,
+    });
+    const edges = await response.json();
+    return edges;
+  } catch {
+    return [];
+  }
+}
+
+export async function saveNote(noteToSave, operation) {
+  const formData = new FormData();
+  formData.append("note", JSON.stringify(noteToSave));
+  await fetch(`${API_URL}/${operation}Note`, {
+    method: "POST",
+    body: formData,
+  });
+}
+
+export async function getNotes() {
+  const response = await fetch(`${API_URL}/getNotes`);
+  const noteList = await response.json();
+  return noteList;
+}

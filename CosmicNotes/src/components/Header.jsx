@@ -42,7 +42,7 @@ export default function Header({ setPopup, view, setView }) {
           variant="contained"
           startIcon={<PlusIcon />}
           sx={addButton}
-          onClick={() => setPopup({ active: true, id: 0 })}
+          onClick={() => setPopup({ active: true, id: "NA" })}
         >
           New Note
         </Button>

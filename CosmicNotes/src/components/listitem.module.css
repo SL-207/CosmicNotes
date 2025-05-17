@@ -1,21 +1,31 @@
-.listItem{
-    background-color: #1A2234;
-    color: #e2e8f0;
-    margin: 10px 35px;
-    padding: 10px 20px;
-    font-family: 'Courier New', Courier, monospace;
-    outline: auto;
-    outline-color: #2A3344;
-    outline-width: 1.25px;
-    outline-style: solid;
-    border-radius: 8px
+.listItem {
+  background-color: #1a2234;
+  color: #e2e8f0;
+  margin: 10px 35px;
+  padding: 10px 20px;
+  font-family: "Courier New", Courier, monospace;
+  outline: auto;
+  outline-color: #2a3344;
+  outline-width: 1.25px;
+  outline-style: solid;
+  border-radius: 8px;
+  white-space: pre-wrap;
 }
-.titleContainer{
-    display: flex;
-    justify-content: space-between;
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
 }
-.date{
-    margin-top: -5px;
-    color: #64748B;
-    font-size: 0.75em;
+.noteContainer{
+    max-height: 200px;     
+    overflow: hidden;      
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+.date {
+  margin-top: -5px;
+  color: #64748b;
+  font-size: 0.75em;
 }
