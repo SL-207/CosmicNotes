@@ -4,14 +4,14 @@ from pymongo.server_api import ServerApi
 from flask_cors import CORS
 import json
 
-from transformers import CLIPProcessor, CLIPModel
+from transformers import AutoProcessor, AutoModel
 import numpy as np
 
 app = Flask(__name__)
 CORS(app)
 
-model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+model = AutoModel.from_pretrained("openai/clip-vit-base-patch32")
+processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
 uri = "mongodb+srv://sl207020:c6Gnni3LwAH6DQWq@notecluster.qeytuf9.mongodb.net/?retryWrites=true&w=majority&appName=NoteCluster"
 client = MongoClient(uri, server_api=ServerApi("1"))
 notes_collection = client.CosmicDB.notes
