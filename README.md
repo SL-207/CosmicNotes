@@ -1,8 +1,8 @@
 ### CosmicNotes
 A dark-themed, nonlinear notetaking application featuring a graphical visualization of the semantic similarity between notes.
 
-<img width="531" height="718" alt="Screenshot 2025-07-11 at 5 27 01 PM" src="https://github.com/user-attachments/assets/b8b3fbcc-9d85-43fd-af24-45a7acf7562b" />
-<img width="552" height="682" alt="Screenshot 2025-07-11 at 5 27 45 PM" src="https://github.com/user-attachments/assets/b4b729f7-8f75-463f-8ea0-2fb2d590f418" />
+<img width="331" height="718" alt="Screenshot 2025-07-11 at 5 27 01 PM" src="https://github.com/user-attachments/assets/b8b3fbcc-9d85-43fd-af24-45a7acf7562b" />
+<img width="352" height="682" alt="Screenshot 2025-07-11 at 5 27 45 PM" src="https://github.com/user-attachments/assets/b4b729f7-8f75-463f-8ea0-2fb2d590f418" />
 <img width="552" height="720" alt="Screenshot 2025-07-11 at 5 28 53 PM" src="https://github.com/user-attachments/assets/e81c6f79-c48e-45e7-baae-34c84351090f" />
 
 ## Features
