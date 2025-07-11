@@ -13,3 +13,12 @@ A dark-themed, nonlinear notetaking application featuring a graphical visualizat
 - **Frontend**: React, JavaScript, CSS
 - **Backend**: Flask, Python, `transformers`
 - **Database**: MongoDB
+
+## Project Structure
+```
+├── backend
+│   └── app.py                                                # Main Flask application and API endpoint
+├── CosmicNotes/                                              # React application
+│   └── ...
+└── README.md
+```
